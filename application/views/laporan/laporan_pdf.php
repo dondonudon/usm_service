@@ -10,8 +10,8 @@ if (empty($tanggal_a) || empty($tanggal_b)) {
     $query = $this->db->query("SELECT *, sum(jumlah) as total
                                 FROM spk 
                                 INNER JOIN spk_detail ON spk.nospk = spk_detail.nospk
-                                GROUP BY spk.nospk
-                                WHERE spk.datetime BETWEEN '$tanggal_a' AND '$tanggal_b' ");
+                                WHERE spk.datetime >= '$tanggal_a' AND spk.datetime <= '$tanggal_b' 
+                                GROUP BY spk.nospk");
 }
 
 

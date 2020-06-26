@@ -125,8 +125,9 @@ class Laporan extends CI_Controller
     }
 
     public function report(){
-        $tanggal_a = $_POST['tanggal_a'];
-        $tanggal_b = $_POST['tanggal_b'];
+
+        $tanggal_a = $_POST['tanggal_a'] . " 00:00:00";
+        $tanggal_b = $_POST['tanggal_b'] . " 23:59:59";
         $data = array(
             'tanggal_a' =>$tanggal_a,
             'tanggal_b' =>$tanggal_b,

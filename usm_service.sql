@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 23, 2020 at 08:41 PM
+-- Generation Time: Jun 24, 2020 at 02:31 PM
 -- Server version: 8.0.20-0ubuntu0.20.04.1
 -- PHP Version: 7.4.3
 
@@ -16,7 +16,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `usm_service`
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `counter` (
   `id` varchar(2) NOT NULL COMMENT 'A=notrans, B=stock_opname, C=master_stok_kasir, D=retur_kasir',
   `counter` int NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `counter`
@@ -48,7 +48,7 @@ INSERT INTO `counter` (`id`, `counter`) VALUES
 
 CREATE TABLE `spk` (
   `id` int NOT NULL,
-  `nospk` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nospk` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `nama` varchar(20) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `telp` varchar(15) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `spk` (
   `id_user` int NOT NULL,
   `status` int NOT NULL,
   `datetime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -68,13 +68,13 @@ CREATE TABLE `spk` (
 
 CREATE TABLE `spk_detail` (
   `id` int NOT NULL,
-  `nospk` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nospk` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `barang` varchar(20) DEFAULT NULL,
   `harga` int DEFAULT NULL,
   `qty` int NOT NULL,
   `jumlah` int NOT NULL,
   `datetime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -205,13 +205,13 @@ INSERT INTO `tbl_user_level` (`id_user_level`, `nama_level`) VALUES
 
 CREATE TABLE `temp_spk` (
   `id` int NOT NULL,
-  `nospk` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nospk` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `barang` varchar(50) DEFAULT NULL,
   `harga` int DEFAULT NULL,
   `qty` int NOT NULL,
   `jumlah` int NOT NULL,
   `datetime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `temp_spk`
